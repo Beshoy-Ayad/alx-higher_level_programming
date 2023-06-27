@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-import math
 
 """Define a class Square."""
+
+import math
 
 
 class MagicClass:
