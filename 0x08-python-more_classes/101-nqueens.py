@@ -42,6 +42,7 @@ def solve(board, col, n, solutions):
 
 
 def print_solutions(solutions):
+    solutions.sort(key=lambda x: x[0])
     for solution in solutions:
         print(solution)
 
