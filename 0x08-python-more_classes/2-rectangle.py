@@ -1,16 +1,14 @@
 #!/usr/bin/python3
+"""  represent a rectangle
+"""
 
-"""Rectangle module"""
 
-
-class Rectangle:
-
-    """Rectangle class"""
-
-    def __init__(self, width=0, hight=0):
-
+class Rectangle():
+    """  represent a rectangle
+    """
+    def __init__(self, width=0, height=0):
+        self.height = height
         self.width = width
-        self.height = hight
 
     @property
     def width(self):
@@ -36,12 +34,10 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    def area(self):
+        return self.width * self.height
 
-def area(self):
-    return (self.__width * self.__height)
-
-
-def perimeter(self):
-    if self.__width == 0 or self.__height == 0:
+    def perimeter(self):
+        if self.width and self.height:
+            return 2 * (self.width + self.height)
         return 0
-    return ((self.__width * 2) + (self.__height * 2))
