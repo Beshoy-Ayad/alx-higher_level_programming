@@ -1,18 +1,12 @@
 #!/usr/bin/python3
-"""
-    Print the sorted elements of the calling object.
+""" Manipulate lists of integers
 """
 
 
 class MyList(list):
+    """ Manage a list of integers
     """
-        Parameters:
-            self (list): The list to be sorted and printed.
-    """
-
     def print_sorted(self):
-        """
-        Returns:
-            None
+        """ Print a list sorted in ascending order
         """
         print(sorted(self))
