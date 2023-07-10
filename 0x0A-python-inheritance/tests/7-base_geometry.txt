@@ -25,4 +25,3 @@ Traceback (most recent call last):
   File "7-base_geometry.py", line 21, in integer_validator
     raise ValueError("{} must be greater than 0".format(name))
 ValueError: distance must be greater than 0
-
