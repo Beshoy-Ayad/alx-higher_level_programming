@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def read_file(filename=""):
     """Reads a text file and prints it to stdout"""
     # Use the with statement to open the file in read mode
