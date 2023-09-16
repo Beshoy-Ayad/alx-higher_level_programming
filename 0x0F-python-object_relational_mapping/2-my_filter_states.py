@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-
 """
-This script lists all states from the database hbtn_0e_0_usa.
+This script displays all values in the states table of hbtn_0e_0_usa where name matches the argument in a case-sensitive way.
+
+Arguments: mysql username, mysql password, database name, state name
 """
 
 import MySQLdb
@@ -18,12 +19,13 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name LIKE '{:s}'
-                ORDER BY id ASC".format(state_name))
+    # Use %s placeholder and BINARY operator for case-sensitive comparison
+    cur.execute("SELECT * FROM states WHERE BINARY name LIKE %s
+                ORDER BY id ASC", (state_name,))
 
+    # Print all matching rows
     for row in cur.fetchall():
-        if row[1] == state_name:
-            print(row)
+        print(row)
 
     cur.close()
     db.close()
