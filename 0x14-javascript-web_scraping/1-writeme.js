@@ -3,16 +3,10 @@
   reads and prints the content of a file
   first argument is the file path
  */
-
+const myArgs = process.argv.slice(2);
 const fs = require('fs');
-
-const filePath = process.argv[2];
-const content = process.argv[3];
-
-fs.writeFile(filePath, content, 'utf-8', (err) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    console.log(`Content written to ${filePath}`);
+fs.writeFile(myArgs[0], myArgs[1], 'utf8', (error) => {
+  if (error) {
+    console.log(error);
+  }
 });
